@@ -1,42 +1,66 @@
 # REA Studio
 
-ویرایشگر کد سبک و سریع ساخته‌شده با **Rust + egui** - نسخهٔ 2.1.0
+A lightweight and fast code editor built with **Rust** and **egui**.
 
-## دانلود (نسخهٔ v2.1.0)
+**Current version: 2.1.0**
 
-| سیستم‌عامل | فایل |
+## Download — v2.1.0
+
+| Platform | Download |
 |---|---|
-| ویندوز (نصبی) | [REAStudio-Setup-2.1.0.exe](https://github.com/smartlmgpt-create/rea-studio/releases/download/v2.1.0/REAStudio-Setup-2.1.0.exe) |
-| ویندوز (پرتابل، اگر موجود باشد) | [REAStudio-2.1.0.exe](https://github.com/smartlmgpt-create/rea-studio/releases/download/v2.1.0/REAStudio-2.1.0.exe) |
-| لینوکس (نصب خودکار) | [REAStudio-2.1.0-linux-setup.sh](https://github.com/smartlmgpt-create/rea-studio/releases/download/v2.1.0/REAStudio-2.1.0-linux-setup.sh) |
-| مک (نصب خودکار) | [REAStudio-2.1.0-macos-setup.sh](https://github.com/smartlmgpt-create/rea-studio/releases/download/v2.1.0/REAStudio-2.1.0-macos-setup.sh) |
-| سورس کامل | [rea-studio-2.1.0-src.zip](https://github.com/smartlmgpt-create/rea-studio/releases/download/v2.1.0/rea-studio-2.1.0-src.zip) |
+| Windows Installer | [REAStudio-Setup-2.1.0.exe](https://github.com/smartlmgpt-create/rea-studio/releases/download/v2.1.0/REAStudio-Setup-2.1.0.exe) |
+| Windows Portable (if available) | [REAStudio-2.1.0.exe](https://github.com/smartlmgpt-create/rea-studio/releases/download/v2.1.0/REAStudio-2.1.0.exe) |
+| Linux Installer | [REAStudio-2.1.0-linux-setup.sh](https://github.com/smartlmgpt-create/rea-studio/releases/download/v2.1.0/REAStudio-2.1.0-linux-setup.sh) |
+| macOS Installer | [REAStudio-2.1.0-macos-setup.sh](https://github.com/smartlmgpt-create/rea-studio/releases/download/v2.1.0/REAStudio-2.1.0-macos-setup.sh) |
+| Source Code | [rea-studio-2.1.0-src.zip](https://github.com/smartlmgpt-create/rea-studio/releases/download/v2.1.0/rea-studio-2.1.0-src.zip) |
 
-همهٔ فایل‌ها در صفحهٔ [Releases](https://github.com/smartlmgpt-create/rea-studio/releases) هستند.
+**[View all releases](https://github.com/smartlmgpt-create/rea-studio/releases)**
 
-## بررسی به‌روزرسانی داخل برنامه
+## In-App Update Checker
 
-آدرس manifest (latest.json) که برنامهٔ REA Studio می‌خواند:
+REA Studio checks the following manifest for available updates:
 
-    https://raw.githubusercontent.com/smartlmgpt-create/rea-studio/main/latest.json
+`https://raw.githubusercontent.com/smartlmgpt-create/rea-studio/main/latest.json`
 
-برنامه در منوی Help -> Check for Updates این فایل را بررسی می‌کند؛ اگر نسخهٔ
-جدیدتری منتشر شده باشد خبر می‌دهد. این آدرس به‌صورت خودکار در settings.json
-برنامه ثبت می‌شود و از Settings هم قابل تغییر است.
+To check for updates manually, open:
 
-## امکانات نسخهٔ 2.1.0
+**Help → Check for Updates**
 
-- منوی **Tools** با ۲۷ ابزار: مرتب‌سازی/حذف تکراری خطوط، تبدیل حروف، Base64/URL/JSON،
-  هش MD5/SHA-1/SHA-256، EOL/BOM، درج زمان
-- **مقایسهٔ دو فایل** (دوستونه، پرش بین تغییرات با F8)
-- **اسکنر TODO** کل پوشه (TODO/FIXME/XXX/HACK) با پرش با کلیک
-- **آمار سند**: خط/کلمه/نویسه/انتخاب + نشانگر LF/CRLF
-- ماکروی صفحه‌کلید و انتخاب ستونی (از 2.0)
-- هایلایت ۵۵+ زبان، ترمینال داخلی، LSP، پلاگین، تم تاریک/روشن
-- کتاب‌نشانه‌ها، زوم (Ctrl+چرخ موس)، لیست توابع (Outline)، بازیابی نشست
+The manifest URL is stored in the application's `settings.json` file and can also be changed through Settings.
 
-## ساخت از سورس
+## Features in Version 2.1.0
 
-    cargo build --release
+- **27 text tools:** Sort lines, remove duplicates, change letter case, Base64, URL and JSON conversion, MD5/SHA-1/SHA-256 hashing, EOL/BOM handling, and timestamp insertion.
+- **File Comparison:** Side-by-side comparison with navigation between differences using F8.
+- **TODO Scanner:** Scan the entire project folder for TODO, FIXME, XXX, and HACK comments.
+- **Document Statistics:** View line, word, character, and selection counts, along with LF/CRLF indicators.
+- **Keyboard Macros and Column Selection:** Features introduced in version 2.0.
+- **55+ Language Highlighting:** Syntax highlighting for more than 55 languages.
+- **Integrated Terminal**
+- **Language Server Protocol (LSP) Support**
+- **Plugin Support**
+- **Dark and Light Themes**
+- **Bookmarks and Function Outline**
+- **Zoom Controls:** Use Ctrl + Mouse Wheel.
+- **Session Recovery**
 
-جزئیات بیشتر در BUILDING.md و CHANGELOG-2.1.0.md
+## Building from Source
+
+Make sure Rust and Cargo are installed, then run:
+
+```bash
+cargo build --release
+```
+
+For detailed build instructions, see:
+
+- [BUILDING.md](BUILDING.md)
+- [CHANGELOG-2.1.0.md](CHANGELOG-2.1.0.md)
+
+## License
+
+REA Studio is distributed under the MIT License. See [LICENSE](LICENSE) for details.
+
+## Repository
+
+[https://github.com/smartlmgpt-create/rea-studio](https://github.com/smartlmgpt-create/rea-studio)
