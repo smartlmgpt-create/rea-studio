@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>دانلود — REA Studio</title>
+<meta name="description" content="دانلود REA Studio: نسخهٔ پرتابل و نصاب NSIS، تاریخچهٔ نسخه‌ها و راهنمای فعال‌سازی PHP روی Live Server.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html"><span class="cube">R</span> REA Studio</a>
+    <nav>
+      <a href="index.html">خانه</a>
+      <a href="compare.html">مقایسه</a>
+      <a href="download.html" class="on">دانلود</a>
+      <a href="contact.html">تماس</a>
+    </nav>
+    <div class="grow"></div>
+    <span class="phpbadge" id="phpBadge">🐘 PHP …</span>
+    <button class="iconbtn" id="themeToggle" title="تغییر پوسته">☀️</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <h1 style="font-size:28px">دانلود</h1>
+    <p class="subsec">همهٔ نسخه‌ها در یک پوشهٔ مشترک — قبل از اجرا md5 را کنترل کنید.</p>
+
+    <div class="callout" style="margin-bottom:24px">
+      <b>⬇️ لینک دانلود (نسخهٔ ۱٫۷٫۵ و همهٔ پیشین‌ها):</b><br>
+      <a href="https://gofile.io/d/dersubYO" style="font-family:var(--mono);direction:ltr;display:inline-block">https://gofile.io/d/dersubYO</a>
+      <br><span class="note">
+      REAStudio-Setup-1.7.5.exe (نصاب، پیشنهادی) · REAStudio-1.7.5.exe (پرتابل) ·
+      REAStudio-Certificate.cer (گواهی امضا) · سورس کامل (zip)
+      </span>
+    </div>
+
+    <h2 id="php">فعال‌سازی PHP روی Live Server <span class="kicker" style="margin:0">۲ دقیقه</span></h2>
+    <p class="subsec">از نسخهٔ ۱٫۷٫۵ فایل‌های PHP روی سرور داخلی اجرا می‌شوند — به php-cgi نیاز دارد:</p>
+    <div class="grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="card"><span class="ico">1️⃣</span><h3>بگیرید</h3>
+        <p>PHP (نسخهٔ Thread Safe، فایل زیپ) را از <span style="direction:ltr;display:inline-block">windows.php.net/download</span> بردارید — یا اگر XAMPP دارید، پوشهٔ <span style="direction:ltr;display:inline-block">C:\xampp\php</span> از قبل php-cgi.exe دارد.</p></div>
+      <div class="card"><span class="ico">2️⃣</span><h3>قرار دهید</h3>
+        <p>پوشهٔ PHP را به PATH ویندوز اضافه کنید — یا ساده‌تر: کل پوشه را کنار rea-studio.exe کپی کنید (خودکار پیدا می‌شود).</p></div>
+      <div class="card"><span class="ico">3️⃣</span><h3>ری‌استارت</h3>
+        <p>Live Server را خاموش و روشن کنید. بج بالای همین صفحه سبز می‌شود و فرم تماس واقعاً ذخیره می‌کند.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>تاریخچهٔ نسخه‌ها</h2>
+    <p class="subsec">خلاصهٔ تغییرات — جزئیات کامل در CHANGELOG هر نسخه داخل پوشهٔ دانلود.</p>
+
+    <div class="ver">
+      <div class="head"><span class="vtag">1.7.5</span><span class="date">۲۰۲۶-۱۰-۳۱</span><span class="kicker" style="margin:0">آخرین</span></div>
+      <ul>
+        <li><b>🐘 اجرای PHP:</b> درخواست‌های ‎.php از طریق php-cgi (CGI/1.1) اجرا می‌شوند — POST، کوکی و QUERY_STRING کامل.</li>
+        <li><b>خواندن کامل بدنهٔ درخواست:</b> قبلاً فقط ۴۰۹۶ بایت اول هر درخواست دیده می‌شد؛ الان Content-Length تا ۸ مگابایت خوانده می‌شود.</li>
+        <li><b>صفحهٔ راهنمای فارسی</b> هنگام درخواست PHP وقتی php-cgi نصب نیست.</li>
+        <li><b>پایداری:</b> timeout خواندن/نوشتن برای اتصال‌های نیمه‌کاره + پشتیبانی index.php به‌عنوان صفحهٔ پیش‌فرض.</li>
+      </ul>
+    </div>
+
+    <div class="ver">
+      <div class="head"><span class="vtag">1.7.4</span><span class="date">۲۰۲۶-۱۰-۳۱</span></div>
+      <ul>
+        <li><b>امضای دیجیتال Authenticode</b> (self-signed همراه با گواهی و راهنمای نصب) + مقاوم‌سازی قفل‌های lsp.rs در برابر deadlock.</li>
+      </ul>
+    </div>
+
+    <div class="ver">
+      <div class="head"><span class="vtag">1.7.3</span><span class="date">۲۰۲۶-۱۰-۳۱</span></div>
+      <ul>
+        <li><b>حفاظت انکدینگ:</b> صفحات windows-1252/1256 و UTF-16 در پیش‌نمایش زنده دیگر خراب نمی‌شوند (sniff + تزریق بایت‌سطح).</li>
+        <li><b>پرامپت اعتماد DAP:</b> قبل از اجرای launch.json سه گزینهٔ Always / Once / Cancel.</li>
+      </ul>
+    </div>
+
+    <div class="ver">
+      <div class="head"><span class="vtag">1.7.2</span><span class="date">۲۰۲۶-۱۰-۳۱</span></div>
+      <ul>
+        <li><b>رفع بحرانی‌ها:</b> crash پنل ترمینال (focus split-borrow)، اجرای liveserver خارج از رشتهٔ UI، سقف بافر ۴MB، کدهای کنترل VT.</li>
+        <li><b>نصاب NSIS</b> برای اولین بار.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="callout">
+      <b>⚠️ دربارهٔ هشدار SmartScreen:</b> گواهی REA Studio از نوع self-signed است، بنابراین ویندوز اولین بار هشدار
+      «Unknown Publisher» می‌دهد. برای حذف هشدار، فایل REAStudio-Certificate.cer را دانلود و نصب کنید
+      (راهنمای ۵ مرحله‌ای داخل README-Certificate-FA.txt کنار فایل دانلودی).
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap cols">
+    <div>
+      <b>REA Studio</b> — ویرایشگر کد سبک Rust/egui برای ویندوز<br>
+      <span class="note">© <span id="year">2026</span></span>
+    </div>
+    <div>
+      <a href="index.html">خانه</a> · <a href="compare.html">مقایسه</a> ·
+      <a href="download.html">دانلود</a> · <a href="contact.html">تماس</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>

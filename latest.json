@@ -1,0 +1,5 @@
+{
+    "version":  "2.1.0",
+    "url":  "https://github.com/smartlmgpt-create/rea-studio/releases/tag/v2.1.0",
+    "notes":  "REA Studio 2.1.0 - Tools menu (27 commands), file compare, TODO scanner, document statistics, EOL/BOM. Dark/light theme, Rust + egui."
+}
