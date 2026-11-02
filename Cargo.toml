@@ -1,0 +1,54 @@
+[package]
+name = "rea-studio"
+version = "2.1.0"
+edition = "2021"
+description = "REA Studio - a fast, lightweight code editor. 100% Rust."
+license = "MIT"
+
+[dependencies]
+eframe = { version = "0.29", default-features = false, features = ["default_fonts", "glow", "x11", "wayland"] }
+egui = "0.29"
+rfd = "0.15"
+syntect = { version = "5", default-features = false, features = ["default-fancy"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+regex = "1"
+# in-memory PFX export for the Live Server HTTPS cert (no key file on disk)
+base64 = "0.22"
+# v2.1: text tools — hashes + local timestamp
+md-5 = "0.10"
+sha1 = "0.10"
+sha2 = "0.10"
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+
+[target.'cfg(windows)'.dependencies]
+# ConPTY (real pseudo-console) for the v1.7 terminal redesign
+windows-sys = { version = "0.59", features = [
+    "Win32_Foundation",
+    "Win32_Security",
+    "Win32_Storage_FileSystem",
+    "Win32_System_Console",
+    "Win32_System_IO",
+    "Win32_System_Pipes",
+    "Win32_System_Threading",
+    "Win32_UI_Shell",
+] }
+# HTTPS for the Live Server (SChannel — no OpenSSL needed)
+native-tls = "0.2"
+
+[target.'cfg(unix)'.dependencies]
+# v1.8: POSIX PTY for the terminal panel (Linux/macOS)
+libc = "0.2"
+# v1.8: HTTPS for the Live Server on unix — pure Rust, no OpenSSL needed
+rustls = { version = "0.23", default-features = false, features = ["ring", "std", "logging", "tls12"] }
+rcgen = "0.13"
+
+[profile.release]
+opt-level = "z"
+lto = "thin"
+strip = true
+codegen-units = 1
+# was "abort": with abort every panic killed the whole editor instantly
+# (even the ones we now guard against). "unwind" lets future bugs surface
+# as catchable errors instead of an instant process death.
+panic = "unwind"

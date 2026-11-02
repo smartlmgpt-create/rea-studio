@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>REA Studio — ویرایشگر کد سبک ۶٫۵ مگابایتی</title>
+<meta name="description" content="REA Studio: ویرایشگر کد Rust/egui با ترمینال داخلی، Live Server با ریلود خودکار، اجرای PHP و دیباگر DAP — همه در یک فایل exe ۶٫۵ مگابایتی.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="index.html"><span class="cube">R</span> REA Studio</a>
+    <nav>
+      <a href="index.html" class="on">خانه</a>
+      <a href="compare.html">مقایسه</a>
+      <a href="download.html">دانلود</a>
+      <a href="contact.html">تماس</a>
+    </nav>
+    <div class="grow"></div>
+    <span class="phpbadge" id="phpBadge">🐘 PHP …</span>
+    <button class="iconbtn" id="themeToggle" title="تغییر پوسته">☀️</button>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div>
+      <span class="kicker">🦀 نسخهٔ ۱٫۷٫۵ — پشتیبانی PHP تازه اضافه شد</span>
+      <h1>ویرایشگر کدی که <span class="grad">فقط ۶٫۵ مگابایت</span> است — بدون Electron، بدون اکانت، بدون تله‌متری</h1>
+      <p class="lead">
+        REA Studio یک ویرایشگر کد بومی ویندوز است که با Rust و egui ساخته شده.
+        ترمینال داخلی، سرور زندهٔ وب با ریلود خودکار، اجرای PHP و دیباگر — همهٔ این‌ها
+        در یک فایل exe مستقل که در کمتر از یک ثانیه بالا می‌آید.
+      </p>
+      <div class="cta">
+        <a class="btn primary" href="download.html">⬇️ دانلود رایگان</a>
+        <a class="btn ghost" href="compare.html">مقایسه با Notepad++ و VS Code</a>
+      </div>
+    </div>
+    <div class="window" aria-hidden="true">
+      <div class="bar">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="tab">main.rs — REA Studio</span>
+      </div>
+      <pre><span class="c-cm">// کل ادیتور در همین تابع شروع می‌شود 🚀</span>
+<span class="c-kw">fn</span> <span class="c-fn">main</span>() {
+    <span class="c-kw">let</span> app = App::<span class="c-fn">new</span>(<span class="c-str">"workspace/"</span>);
+    app.<span class="c-fn">open_terminal</span>();      <span class="c-cm">// ConPTY داخلی</span>
+    app.<span class="c-fn">start_live_server</span>(); <span class="c-cm">// ریلود خودکار + PHP</span>
+    app.<span class="c-fn">attach_debugger</span>();   <span class="c-cm">// DAP با پرامپت اعتماد</span>
+
+    <span class="c-attr">egui</span>::<span class="c-fn">run</span>(app, |ui| {
+        ui.<span class="c-fn">label</span>(<span class="c-str">"6.5 MB — صفر وابستگی خارجی"</span>);
+    });
+}</pre>
+    </div>
+  </section>
+
+  <!-- ================= STATS ================= -->
+  <section class="reveal">
+    <div class="stats">
+      <div class="stat"><b>6.5<span style="font-size:14px"> MB</span></b><span>حجم نصب</span></div>
+      <div class="stat"><b>&lt;1s</b><span>زمان شروع</span></div>
+      <div class="stat"><b>0</b><span>وابستگی خارجی</span></div>
+      <div class="stat"><b>1</b><span>فایل exe مستقل</span></div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+  <section class="reveal">
+    <h2>امکانات</h2>
+    <p class="subsec">هر قابلیت، بومی و سبک — بدون بارگذاری موتور مرورگر یا رانتایم جانبی.</p>
+    <div class="grid">
+      <div class="card"><span class="ico">🖥️</span><h3>ترمینال داخلی واقعی</h3>
+        <p>ConPTY ویندوز با پشتیبانی ANSI/VT، بافر هوشمند ۴ مگابایتی و اجرای مستقیم cargo، git و php.</p></div>
+      <div class="card"><span class="ico">⚡</span><h3>Live Server با ریلود خودکار</h3>
+        <p>هر فایلی را که ذخیره کنید مرورگر خودش رفرش می‌شود — HTML، CSS، JS، تصویر و فونت، همه زیر نظرند.</p></div>
+      <div class="card"><span class="ico">🐘</span><h3>اجرای PHP <span class="new">جدید در ۱٫۷٫۵</span></h3>
+        <p>فایل‌های .php از طریق php-cgi اجرا می‌شوند؛ POST، کوکی و متغیرهای CGI کامل پاس داده می‌شوند.</p></div>
+      <div class="card"><span class="ico">🐞</span><h3>دیباگر DAP با پرامپت اعتماد</h3>
+        <p>قبل از اجرای launch.json از شما پرسیده می‌شود؛ اجرای خودکار پیکربندی ناشناس ممنوع است.</p></div>
+      <div class="card"><span class="ico">🛡️</span><h3>حفاظت انکدینگ صفحات</h3>
+        <p>صفحات قدیمی windows-1256 و UTF-16 در پیش‌نمایش زنده خراب نمی‌شوند — ریلود بدون دست‌زدن به بایت‌ها.</p></div>
+      <div class="card"><span class="ico">✍️</span><h3>امضای دیجیتال + نصاب</h3>
+        <p>exe امضاشدهٔ Authenticode و نصاب NSIS؛ گواهی self-signed همراه بسته ارائه می‌شود.</p></div>
+    </div>
+  </section>
+
+  <!-- ================= LIVE DEMO CALLOUT ================= -->
+  <section class="reveal">
+    <div class="callout">
+      <b>💡 همین سایت، دموی زندهٔ همین قابلیت‌هاست!</b>
+      این صفحه الان روی Live Server خودِ REA Studio اجرا می‌شود. به بج «PHP» در بالای صفحه نگاه کنید:
+      اگر سبز است یعنی php-cgi فعال است و <a href="contact.html">فرم تماس</a> واقعاً پیام‌ها را در
+      <code style="direction:ltr;display:inline-block">php/data/messages.json</code> ذخیره می‌کند؛
+      اگر قرمز است، سایت به‌صورت استاتیک کار می‌کند و فرم در حالت نمایشی (localStorage) عمل می‌کند —
+      <a href="download.html#php">راهنمای فعال‌سازی PHP</a> دو دقیقه بیشتر وقت نمی‌گیرد.
+    </div>
+  </section>
+
+  <!-- ================= MINI COMPARE ================= -->
+  <section class="reveal">
+    <h2>در یک نگاه</h2>
+    <p class="subsec">خلاصهٔ مقایسه — <a href="compare.html">جدول کامل ۱۲ سطری</a> در صفحهٔ مقایسه.</p>
+    <div class="tablewrap">
+      <table>
+        <colgroup><col><col class="hl"><col><col></colgroup>
+        <thead><tr><th>ویژگی</th><th class="hl">REA Studio</th><th>Notepad++</th><th>VS Code</th></tr></thead>
+        <tbody>
+          <tr><td>حجم نصب</td><td>~۶٫۵ MB</td><td>~۵ MB</td><td>~۳۵۰ MB</td></tr>
+          <tr><td>ترمینال داخلی</td><td class="yes">✔ ConPTY</td><td class="no">✘</td><td class="yes">✔</td></tr>
+          <tr><td>پیش‌نمایش زندهٔ وب + ریلود</td><td class="yes">✔ داخلی</td><td class="no">✘</td><td class="mid">با افزونه</td></tr>
+          <tr><td>اجرای PHP</td><td class="yes">✔ php-cgi</td><td class="no">✘</td><td class="no">✘</td></tr>
+          <tr><td>اکوسیستم افزونه</td><td class="no">✘</td><td class="yes">✔ ~۴۰۰</td><td class="yes">✔ ۶۰هزار+</td></tr>
+          <tr><td>دیباگر کامل</td><td class="mid">پایه (DAP)</td><td class="no">✘</td><td class="yes">✔</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="reveal">
+    <div class="callout" style="text-align:center">
+      <h2 style="margin-bottom:10px">آمادهٔ امتحان کردن هستید؟</h2>
+      <p class="subsec" style="margin-bottom:18px">دانلود، اجرا، شروع Live Server — بدون نصب، بدون ثبت‌نام.</p>
+      <a class="btn primary" href="download.html">⬇️ دریافت REA Studio ۱٫۷٫۵</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap cols">
+    <div>
+      <b>REA Studio</b> — ویرایشگر کد سبک Rust/egui برای ویندوز<br>
+      <span class="note">ساخته‌شده با ❤️ و صفر وابستگی — © <span id="year">2026</span></span>
+    </div>
+    <div>
+      <a href="index.html">خانه</a> · <a href="compare.html">مقایسه</a> ·
+      <a href="download.html">دانلود</a> · <a href="contact.html">تماس</a><br>
+      <span class="note">این سایت نمونهٔ آموزشی پروژه است و روی Live Server داخلی اجرا می‌شود.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
